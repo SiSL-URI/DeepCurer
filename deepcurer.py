@@ -223,7 +223,7 @@ if not os.path.exists(adv_dataset_path):
     for img_list, lbl_list in zip(images, labels):
         count = 0
         for img, lbl in zip(img_list, lbl_list):
-            if lbl == 3 and count < 5:
+            if lbl == d_t_b and count < 5:
                 filtered_images.append(img)
                 filtered_labels.append(lbl)
                 count += 1
