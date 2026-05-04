@@ -98,7 +98,7 @@ def skip_pruning(args, net, neuron_rank_file, testloader, defense_loader, poison
 
         # Revert if CA drop exceeds threshold
         if ca_drop > ca_drop_threshold:
-            print("Reverting neuron due to CA drop.")
+            #print("Reverting neuron due to CA drop.")
             for name, module in net_pruned.named_modules():
                 if name == layer_name and isinstance(module, nn.BatchNorm2d):
                     with torch.no_grad():
