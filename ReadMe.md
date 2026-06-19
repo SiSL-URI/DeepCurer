@@ -6,18 +6,18 @@ Instructions for running the code:
 
 02. Run 'backdoor_training.py' to get the checkpoint of an attack.
 
-   ```bash
-    python backdoor_training.py --atk 'badnet'
-    ```
+```bash
+python backdoor_training.py --atk 'badnet'
+```
 
-    Attack choices: 'badnet', 'wanet', 'blend', 'fiba', 'trojan', 'sig', 'cl', 'bppattack', 'filter', 'lira'.
+Attack choices: 'badnet', 'wanet', 'blend', 'fiba', 'trojan', 'sig', 'cl', 'bppattack', 'filter', 'lira'.
 
 4. Run 'deepcurer.py' to prune backdoor neurons of an affected model. It will save the proxy adverseraial dataset, backdoor neuron ranking file, the pruning results as a text file, and pruning progress as a    plot.
 
-   ```bash
-   python deepcurer.py --atk 'badnet'
-   ```
+```bash
+python deepcurer.py --atk 'badnet'
+```
 
-   Attack choices: 'badnet', 'wanet', 'blend', 'fiba', 'trojan', 'sig', 'cl', 'bppattack', 'filter', 'lira'.
+Attack choices: 'badnet', 'wanet', 'blend', 'fiba', 'trojan', 'sig', 'cl', 'bppattack', 'filter', 'lira'.
 
 
