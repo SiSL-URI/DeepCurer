@@ -1,4 +1,4 @@
-Sample code for the 'DeepCurer: Pruning-based Backdoor Mitigation via Progressive Neuron Ranking using Adversarial Proxies'
+## Sample code for the 'DeepCurer: Pruning-based Backdoor Mitigation via Progressive Neuron Ranking using Adversarial Proxies'
 
 Instructions for running the code:
 
