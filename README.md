@@ -1,32 +1,9 @@
-# DeepCurer
+# DeepCurer (Neurocomputing 2026)
 
 **Pruning-based Backdoor Mitigation via Progressive Neuron Ranking using Adversarial Proxies**
 
-DeepCurer is a defense against backdoor (trojan) attacks on deep neural networks. Given a
-potentially poisoned model, it locates and removes the neurons responsible for the backdoor
-behavior while preserving clean accuracy — without needing access to poisoned training data or
-knowledge of the trigger.
-
-The core idea is to substitute hard-to-obtain triggered inputs with **adversarial proxies**, then
-rank neurons by an **ASR/CA impact ratio** (how much each neuron contributes to attack success
-relative to its contribution to clean accuracy). Neurons are pruned **progressively** from the most
-backdoor-associated down, so the model is cleaned with minimal loss of utility.
-
-This repository contains sample code for the paper. It is configured to run out of the box on
-CIFAR-10 and extends to Tiny-ImageNet and GTSRB.
-
----
-
-## Method Overview
-
-1. **Adversarial proxy generation** — Instead of relying on real triggered samples, DeepCurer
-   crafts adversarial examples that emulate the effect a backdoor trigger has on the network's
-   internal activations.
-2. **Progressive neuron ranking** — Each neuron is scored by its impact on attack success rate
-   (ASR) versus clean accuracy (CA). Neurons with a high ASR/CA impact ratio are the strongest
-   candidates for carrying the backdoor.
-3. **Pruning** — Neurons are pruned in ranked order, tracking ASR and CA at each step, until the
-   backdoor is neutralized while clean accuracy is retained.
+Backdoor attack, where an adversary poisons the model by misclassifying inputs into an attacker-defined label, shows its uprising threats on deep learning models. Detecting and pruning backdoor neurons has emerged as an effective defense; however, precise mitigation of backdoor neurons from benign ones remains a challenge. Most existing works focus on exploiting empirical characteristics of backdoor neurons, such as their sensitivity to adversarial perturbations or asymmetric learning behavior, while overlooking their theoretical definition. In this paper, we propose a novel backdoor neuron ranking and pruning framework named DeepCurer, where we quantify each neuron’s impact on both clean and backdoor tasks and rank-and-prune them based on the inherent definition of backdoor neurons. To enable effective use of our method in the absence of poisoned samples, we demonstrate that targeted adversarial examples can serve as proxies. We also introduce a lightweight technique to detect target labels using adversarial proxies. A progressive neuron rank-and-prune algorithm is further developed to systematically remove backdoor neurons and sanitize underlying deep learning models. Experimental results show our proposed method can effectively mitigate backdoor neurons against ten state-of-the-art backdoor attacks at ultra-low poisoning ratios (
+=1%) while preserving the model’s clean performance. DeepCurer also upholds its superior performance by comparing against other state-of-the-art backdoor defense methods. 
 
 ---
 
@@ -123,18 +100,19 @@ per-attack breakdown and comparisons against baseline defenses.
 If you use this code, please cite the paper:
 
 ```bibtex
-@article{deepcurer,
-  title   = {DeepCurer: Pruning-based Backdoor Mitigation via Progressive Neuron Ranking using Adversarial Proxies},
-  journal = {Neurocomputing},
-  year    = {2026}
+@article{miah2026deepcurer,
+  title={DeepCurer: Pruning-based backdoor mitigation via progressive neuron ranking using adversarial proxies},
+  author={Miah, Abdullah Arafat and Bi, Yu},
+  journal={Neurocomputing},
+  pages={134409},
+  year={2026},
+  publisher={Elsevier}
 }
 ```
 
-> Please fill in the authors, volume, pages, and DOI once available.
 
 ---
 
 ## Contact
 
-Developed by the Silicon Systems Lab (SiSL), University of Rhode Island. For questions, please open
-an issue on this repository.
+Please contact at {abdullaharafat.miah , yu_bi}@uri.edu for any issues.
